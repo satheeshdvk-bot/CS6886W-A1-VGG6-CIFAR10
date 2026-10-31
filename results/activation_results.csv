@@ -1,0 +1,6 @@
+activation,best_val_accuracy
+gelu,75.88
+silu,74.08
+relu,74.04
+tanh,68.52
+sigmoid,36.4

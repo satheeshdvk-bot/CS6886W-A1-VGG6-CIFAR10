@@ -1,0 +1,7 @@
+optimizer,best_val_accuracy
+nadam,76.64
+adam,75.88
+rmsprop,73.44
+nesterov,61.06
+adagrad,60.96
+sgd,42.96

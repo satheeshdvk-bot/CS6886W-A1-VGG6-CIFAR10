@@ -1,0 +1,4 @@
+batch_size,best_val_accuracy
+128,76.64
+64,73.98
+256,70.92
