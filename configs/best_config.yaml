@@ -1,0 +1,17 @@
+# Best configuration identified from the Assignment 1 experiments
+
+model: VGG6
+dataset: CIFAR-10
+
+activation: gelu
+optimizer: nadam
+
+learning_rate: 0.01
+batch_size: 128
+epochs: 60
+seed: 42
+
+best_checkpoint_epoch: 47
+best_validation_accuracy: 87.42
+test_accuracy: 85.94
+test_loss: 0.5217
