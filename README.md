@@ -239,11 +239,9 @@ Weights & Biases was used to record:
 - Experiment configuration
 - Best validation accuracy
 
-W&B project:
+Experiment tracking was performed using Weights & Biases (W&B).
 
-https://wandb.ai/cs25m534-iitm/CS6886W-A1-VGG6-CIFAR10
-
-The exported assignment plots are available under:
+The exported W&B plots used in the assignment are available under:
 
 ```text
 results/plots/
@@ -302,6 +300,12 @@ pip install -r requirements.txt
 ## Training
 
 The training script accepts the experiment settings through command-line arguments.
+
+W&B is used for experiment logging. Log in before starting training if required:
+
+```bash
+wandb login
+```
 
 To reproduce the final configuration:
 
