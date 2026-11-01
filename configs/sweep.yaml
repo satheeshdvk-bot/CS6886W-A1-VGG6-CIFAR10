@@ -1,0 +1,65 @@
+# W&B sweep configuration for VGG6 on CIFAR-10
+
+name: vgg6-cifar10-sweep
+project: CS6886W-A1-VGG6-CIFAR10
+entity: cs25m534-iitm
+
+program: src/train.py
+
+# Random search avoids running every possible parameter combination
+method: random
+
+# Sweep tries to maximize the best validation accuracy
+metric:
+  name: best_val_accuracy
+  goal: maximize
+
+parameters:
+  activation:
+    values:
+      - relu
+      - sigmoid
+      - tanh
+      - silu
+      - gelu
+
+  optimizer:
+    values:
+      - sgd
+      - nesterov
+      - adam
+      - adagrad
+      - rmsprop
+      - nadam
+
+  learning_rate:
+    values:
+      - 0.0001
+      - 0.001
+      - 0.01
+
+  batch_size:
+    values:
+      - 64
+      - 128
+      - 256
+
+  epochs:
+    values:
+      - 10
+      - 20
+      - 40
+      - 60
+
+# Pass the selected sweep values to the training script
+command:
+  - ${env}
+  - ${interpreter}
+  - -m
+  - src.train
+  - "--activation=${activation}"
+  - "--optimizer=${optimizer}"
+  - "--learning-rate=${learning_rate}"
+  - "--batch-size=${batch_size}"
+  - "--epochs=${epochs}"
+  - "--seed=42"
