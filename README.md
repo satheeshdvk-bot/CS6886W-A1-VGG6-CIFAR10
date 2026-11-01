@@ -13,7 +13,8 @@ CS6886W-A1-VGG6-CIFAR10/
 ├── checkpoints/
 │   └── best_model.pt
 ├── configs/
-│   └── best_config.yaml
+│   ├── best_config.yaml
+│   └── sweep.yaml
 ├── results/
 │   ├── plots/
 │   │   ├── W&B Chart parallel_coordinates_plot.png
@@ -374,10 +375,12 @@ The repository also includes:
 ```text
 requirements.txt
 configs/best_config.yaml
+configs/sweep.yaml
 checkpoints/best_model.pt
 ```
 
 These files provide the dependency versions, final experiment configuration, and trained model required to reproduce the result.
+configs/sweep.yaml contains the W&B sweep search space used to reproduce the hyperparameter exploration
 
 ---
 
